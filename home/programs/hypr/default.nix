@@ -407,18 +407,18 @@ in {
           ignoreDbusInhibit = true;
         };
 
-        listeners = [
+        listener = [
           {
             timeout = 300;
-            onTimeout = "pidof hyprlock || hyprlock";
+            on-timeout = "hyprlock";
           }
           {
             timeout = 800;
-            onTimeout = "systemctl suspend";
+            on-timeout = "systemctl suspend";
           }
           {
             timeout = 100;
-            onTimeout = "hyprsetwallpaper -g -c";
+            on-timeout = "hyprsetwallpaper -g -c";
           }
         ];
       };
